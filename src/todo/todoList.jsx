@@ -3,35 +3,42 @@ import Button from '../template/button';
 
 export default props => {
     const renderRows = () => {
-        return (
-            <>
-            <tr>
-                <td>Descrição</td>
+        const list = props.list || [];
+        return list.map(item => (
+            <tr key={item.id}>
+                <td>{item.description}</td>
                 <td>
-                    <Button style="success" title="Finalizar"/>
-                    <Button style="warning" title="retormar"/>
-                    <Button style="danger" title="excluir"/>
+                    <Button style='success' title="Finalizar" hide={item.done}
+                        onClick={() => props.handleMarkAsDone(item)}></Button>
+                    <Button style='warning' title="retormar" hide={!item.done}
+                        onClick={() => props.handleMarkAsPending(item)}></Button>
+                    <Button style='danger' title="excluir"
+                        onClick={() => props.handleRemove(item)}></Button>
                 </td>
             </tr>
-            <tr>
-            <td>Descrição</td>
-            <td>
-                <Button style="success" title="Finalizar"/>
-                <Button style="warning" title="retormar"/>
-                <Button style="danger" title="excluir"/>
-            </td>
-        </tr>
-        <tr>
-        <td>Descrição</td>
-        <td>
-            <Button style="success" title="Finalizar"/>
-            <Button style="warning" title="retormar"/>
-            <Button style="danger" title="excluir"/>
-        </td>
-    </tr>
-    </>
-        )
+        ))
+                
     }
+
+    // const renderRows = () => {
+    //     const list = props.list || []
+        // return list.map(todo => (
+        //     <tr key={todo.id}>
+        //         <td>{todo.description}</td>
+        //         <td>
+        //             <Button style='success' hide={todo.done}
+        //                 onClick={() => props.handleMarkAsDone(todo)}
+        //                 title="Finalizar"></Button>
+        //             <Button style='warning' hide={!todo.done}
+        //                 onClick={() => props.handleMarkAsPending(todo)}
+        //                 title="retormar"></Button>
+        //             <Button style='danger'
+        //                 onClick={() => props.handleRemove(todo)}
+        //                 title="excluir"></Button>
+        //         </td>
+        //     </tr>
+        // ))
+    // }
 
     return (
         <table className='table'>

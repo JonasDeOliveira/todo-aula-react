@@ -1,44 +1,12 @@
 {
-  "Pedido": [
+  "todo": [
     {
+      "description": "Estudar React",
       "id": 1,
-      "id_cliente": 299,
-      "Endereco": {
-        "id": 1,
-        "Rua": "asdasd",
-        "Numero": 123,
-        "Bairro": "asdasd"
-      },
-      "Pagamento": "Boleto",
-      "Produtos": [
-        {
-          "nome": "Celular Sony",
-          "preco": 2000,
-          "qtd": 2
-        },
-        {
-          "nome": "Celular Samsung",
-          "preco": 3000,
-          "qtd": 10
-        }
-      ]
+      "done": true
     },
     {
-      "id_cliente": 100,
-      "Endereco": {
-        "id": 43,
-        "Rua": "do Sol",
-        "Numero": 123,
-        "Bairro": "Centro"
-      },
-      "Pagamento": "Cartao",
-      "Produtos": [
-        {
-          "nome": "Geladeira",
-          "preco": 3000,
-          "qtd": 1
-        }
-      ],
+      "description": "Estudar Java",
       "id": 2
     }
   ]
